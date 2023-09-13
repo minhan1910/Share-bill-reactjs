@@ -1,0 +1,146 @@
+.grid {
+    display: grid;
+}
+
+.grid-3 {
+    grid-template-columns: auto 1fr auto;
+}
+
+.grid-gap-3 {
+    /* gap: 0.5rem; */
+}
+
+.grid-row {    
+}
+
+.flex-end {
+    justify-content: end;
+}
+
+.gap-2 {
+    gap: 10px;
+}
+
+.mt-2 {
+    margin-top: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: 20rem auto;
+    max-width: 75rem;
+    height: 100vh;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.aligns-start {
+    align-self: start;
+}
+
+.green-text {
+    color: green;
+}
+
+.red-text {
+    color: red;
+}
+
+.orange-bg-light {
+    background-color: rgba(251, 192, 147, 0.3);
+}
+
+.orange-bg-medium {
+    background-color: rgba(242, 121, 53, 0.8);
+}
+
+.content {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1.6rem;
+}
+
+.content-2 {
+    padding: 3rem;
+    font-size: 1.6rem;
+}
+
+.name {
+    font-weight: bold;
+    padding-bottom: 0.3rem;
+}
+
+.image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.notify {
+    font-size: 1.4rem;
+}
+
+.btn {
+    border: 0;
+    padding: 0.7rem 1.2rem;  
+    font-weight: bold;  
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+    align-self: center;     
+    cursor: pointer;   
+}
+
+.friends {
+    height: 40rem;
+}
+
+.split-bill {
+    width: 40rem;
+}
+
+.input-field span {
+    display: block;
+}
+
+.aligns-center {
+    align-items: center;
+}
+
+.ml-2 {
+    margin-left: 1rem;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-3 {
+    gap: 1.3rem;
+}
+
+.inputs {
+    margin-top: 2rem;
+}
+
+.input {
+    width: 3rem;
+}
+
+.fw {
+    width: 1005px;
+}
+
+.unclickable {
+    pointer-events: none;
+
+}
