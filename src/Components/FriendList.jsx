@@ -29,8 +29,7 @@ function FriendList({
       ))}
 
       {isClickedAddFriend && (
-        <AddFriend
-          isClickedAddFriend={isClickedAddFriend}
+        <AddFriend          
           onShowAddNewFriend={handleShowAddNewFriend}
           onAddNewFriend={onAddNewFriend}
         />
