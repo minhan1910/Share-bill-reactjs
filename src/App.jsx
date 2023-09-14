@@ -6,25 +6,25 @@ import SplitBill from "./Components/SplitBill";
 const friends = [
   {
     id: 1,
-    avatar: "https://i.pravatar.cc/48",
+    avatar: "https://i.pravatar.cc/48?=1",
     name: "Clark",
-    notify: "You and Clark are even",
-    isPay: false,
-    oweMoneys: 0,
-    whoIsPay: "",
+    notify: "You owes Clark 7$",
+    isPay: true,
+    oweMoneys: 7,
+    whoIsPay: "Clark",
   },
   {
     id: 2,
-    avatar: "https://i.pravatar.cc/49",
+    avatar: "https://i.pravatar.cc/48?=2",
     name: "Sarah",
-    notify: "You and Sarah are even",
-    oweMoneys: 0,
-    isPay: false,
-    whoIsPay: "",
+    notify: "Sarah owes you 10$",
+    oweMoneys: 10,
+    isPay: true,
+    whoIsPay: "you",
   },
   {
     id: 3,
-    avatar: "https://i.pravatar.cc/50",
+    avatar: "https://i.pravatar.cc/48?=3",
     name: "Anthony",
     notify: "You and Anthony are even",
     oweMoneys: 0,
@@ -40,10 +40,12 @@ function App() {
 
   function handleAddNewFriend(newFriend) {
     setFriendList((friendList) => [...friendList, newFriend]);
+    setIsShowSelectForm(false);
   }
 
   function handleShowSelectForm(friend) {
-    const isSelectedAgain = friendSelected.id === friend.id ? false : true;
+    const isSelectedAgain =
+      friendSelected.id && friendSelected.id === friend.id ? false : true;
 
     if (isSelectedAgain) {
       setFriendSelected(friend);

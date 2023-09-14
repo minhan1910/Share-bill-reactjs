@@ -13,6 +13,8 @@ function Friend({
   friendSelected,
   onShowSelectForm,
 }) {
+  const isSelected = friendSelected?.id === id;
+
   function handleSelectFormClick() {
     const friend = {
       id,
@@ -38,16 +40,16 @@ function Friend({
   }
 
   function getBackgroundUserSelected() {
-    if (friendSelected.id) {
-      return friendSelected.id === id ? "orange-bg-light" : "";
-    }
+    return isSelected ? "orange-bg-light" : "";
   }
 
   return (
     <div className={`content grid grid-3 ${getBackgroundUserSelected()}`}>
       <img src={`${avatar}`} alt="avatar" className="image" />
       <div className="content">
-        <p className="name">{name.slice(0, 1).toUpperCase() + name.slice(1)}</p>
+        <p className="name">
+          {name.slice(0, 1).toUpperCase() + name.slice(1).toLowerCase()}
+        </p>
         <p className={`notify ${getNotifyStatus()}`}>{notify}</p>
       </div>
       <Button
@@ -55,7 +57,7 @@ function Friend({
         bgColor="rgba(242, 121, 53,0.8)"
         onClick={handleSelectFormClick}
       >
-        Select
+        {isSelected ? "Close" : "Select"}
       </Button>
     </div>
   );

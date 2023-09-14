@@ -6,21 +6,30 @@ import Button from "./Button";
 
 function AddFriend({ onAddNewFriend, onShowAddNewFriend }) {
   const [friendName, setFriendName] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("https://i.pravatar.cc/48");
 
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (!friendName || !imageUrl) {
+      alert("You need to enter name and image url!");
+      return;
+    }
+
+    const id = crypto.randomUUID();
     const newFriend = {
-      id: Date.now(),
+      id,
       name: friendName,
-      avatar: imageUrl,
+      // make it unqiue image
+      avatar: `${imageUrl}?=${id}`,
       notify: `You and ${friendName} are even`,
       isPay: false,
     };
 
     onAddNewFriend(newFriend);
     onShowAddNewFriend();
+    setFriendName("");
+    setImageUrl("https://i.pravatar.cc/48");
   }
 
   function handleSetFriendName(friendName) {
