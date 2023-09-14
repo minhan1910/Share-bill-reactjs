@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import InputField from "./InputField";
 import Button from "./Button";
 
-function AddFriend({ onAddNewFriend, onCloseNewFriendForm }) {
+function AddFriend({ onAddNewFriend, onShowAddNewFriend }) {
   const [friendName, setFriendName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
@@ -20,7 +20,7 @@ function AddFriend({ onAddNewFriend, onCloseNewFriendForm }) {
     };
 
     onAddNewFriend(newFriend);
-    onCloseNewFriendForm();
+    onShowAddNewFriend();
   }
 
   function handleSetFriendName(friendName) {
